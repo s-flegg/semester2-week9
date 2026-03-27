@@ -14,14 +14,27 @@ int main( void ) {
 
     // add some nodes
     addNode(list,(Node *)NULL,1); // add at head - special case - pass NULL
+    addNode(list, (Node *)NULL, 2);
+    addNode(list, (Node *)NULL, 3);
 
     // display the list
+    traverseI(list->head);
 
     // add and delete more nodes with addNode() and deleteNode()
+    addNode(list, (Node *)NULL, 4);
+    addNode(list, (Node *)NULL, 5);
+    traverseI(list->head);
+
+    Node *d1 = removeNode(list, (Node *)NULL);
+    printf("%d\n", d1->data->value);
     // deallocate deleted nodes - test with valgrind to check this
+    freeNode(d1);
 
     // free list memory
     freeNodes( list->head );
+
+    // free list
+    free(list);
 
     return 0;
 }
