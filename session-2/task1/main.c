@@ -14,14 +14,14 @@ int main( void ) {
 
     // add some nodes
     addNode(list,(Node *)NULL,1); // add at head - special case - pass NULL
-    addNode(list, (Node *)NULL, 2);
-    addNode(list, (Node *)NULL, 3);
+    addNode(list, list->head, 2);
+    addNode(list, list->head->next, 3);
 
     // display the list
     traverseI(list->head);
 
     // add and delete more nodes with addNode() and deleteNode()
-    addNode(list, (Node *)NULL, 4);
+    addNode(list, list->head, 4);
     addNode(list, (Node *)NULL, 5);
     traverseI(list->head);
 
